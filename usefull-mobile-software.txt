@@ -1,0 +1,12 @@
+ Android
++-------+
+
+Mifare Classic Tool (https://play.google.com/store/apps/details?id=de.syss.MifareClassicTool)  Google Play Store
+NFC tools  (https://play.google.com/store/apps/details?id=com.wakdev.wdnfc)  Google Play Store
+
+
+ iOS
++---+
+
+NFC tools  (https://apps.apple.com/us/app/nfc-tools/id1252962749)  Apple App Store
+
