@@ -1,0 +1,17 @@
+
+ Indala
++------+
+
+ lf search
+
+ lf reader
+
+
+ Iclass
++------+
+
+hf iclass dump --ki 0 -f <filename>
+
+hf iclass decrypt -f <filename>
+
+hf iclass encode -w H10301 --fc <FC> --cn <CN> --ki 0
