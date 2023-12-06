@@ -15,3 +15,17 @@ hf iclass dump --ki 0 -f <filename>
 hf iclass decrypt -f <filename>
 
 hf iclass encode -w H10301 --fc <FC> --cn <CN> --ki 0
+
+
+ Mifare commands
++---------------+
+
+ hf mf auto                   autopwn to get the keys
+
+ hf mf dump -f <filename for card>      dump the card with keys identified above
+
+ hf mf view -f <filename>     view the page data
+
+ hf mf cload -f <filename>    copy page data onto gen1a card 
+
+
