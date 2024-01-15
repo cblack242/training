@@ -1,10 +1,11 @@
 
- Indala
-+------+
+ Indala card cloning
++-------------------+
 
- lf search
-
- lf reader
+lf search          		--- Identify LF card 
+lf indala reader		---	read the card details
+lf indala clone –r a0000000a7c28a02			---	Clone the raw data onto a new T5577 card
+lf indala reader		---	read the new card
 
 
  Iclass
