@@ -1,3 +1,11 @@
+ Proxmark commands
++-----------------+
+
+hw tune     ->  does not tune antenna's, but does give you some idea if the PM3 is borked
+hw connect  -> reconnect if the PM3 disconnects for some reason
+hw ping     -> test connectivity to PM3
+hw status   -> status page, useful for showing the versions and standalone mode
+
 
  Indala card cloning
 +-------------------+
@@ -7,14 +15,31 @@ lf indala reader		---	read the card details
 lf indala clone –r a0000000a7c28a02			---	Clone the raw data onto a new T5577 card
 lf indala reader		---	read the new card
 
+ EM cloning
++----------+
+
+lf em 410x --id 12345678
+lf em 410x reader		--- watch for em cards and dump data
+
+ HID cloning
++-----------+
+
+lf hid clone -r 2006ec0c86                           -> write raw value for T55x7 tag (HID 10301 26 bit)
+lf hid clone -w H10301 --fc 123  --cn 1603			-> write 26bit format, facility code 123 and card number 1603
+lf hid clone -w C1k35s --fc 123  --cn 1337			-> write 35bit HID 1000 corporate format, facility code 123 and card number 1337
+lf hid reader 										-> watch for hid cards and dump their content
+
+
+ Wiegand commands
++----------------+
+
+wiegand list   (list format types for wiegand cards)
+
 
  Iclass
 +------+
-
 hf iclass dump --ki 0 -f <filename>
-
 hf iclass decrypt -f <filename>
-
 hf iclass encode -w H10301 --fc <FC> --cn <CN> --ki 0
 
 
@@ -22,11 +47,8 @@ hf iclass encode -w H10301 --fc <FC> --cn <CN> --ki 0
 +---------------+
 
  hf mf auto                   autopwn to get the keys
-
  hf mf dump -f <filename for card>      dump the card with keys identified above
-
  hf mf view -f <filename>     view the page data
-
  hf mf cload -f <filename>    copy page data onto gen1a card 
 
 
