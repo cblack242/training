@@ -17,6 +17,8 @@ https://www.everythingid.com.au/hid-card-formats-i-15
 https://grave-rose.medium.com/mifare-1k-classic-dd561424a41b
 
 
- Interesting videos
-+------------------+
+ Recce help
++----------+
+https://www.anixter.com/en_gb.html     (Reader and Card ID's and spec sheets)
+
 

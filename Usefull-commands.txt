@@ -5,7 +5,12 @@ hw connect  -> reconnect if the PM3 disconnects for some reason
 hw ping     -> test connectivity to PM3
 hw status   -> status page, useful for showing the versions and standalone mode
 
+ Paxton
++------+
 
+ lf hitag info   <-- check if a hitag card 
+ lf hitag read --ht2 --pwd -k BDF5E846    <-- decode and display the credential data
+ 
  Kantech
 +-------+
 Example card number   XSF(02)85:14640
