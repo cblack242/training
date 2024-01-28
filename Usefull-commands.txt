@@ -1,3 +1,12 @@
+ Proxmark update and start commands
++----------------------------------+
+  pm3.bat    <-- start the proxmark client
+  pm3-flash-bootrom     <-- Used to upgrade the bootrom on older PM3's to a baseline that you can use pm3-flash-all afterwards
+  pm3-flash-all         <-- Upgrade bootrom and fw at the same time
+  
+  https://www.proxmarkbuilds.org/latest/rrg_other   <--- download latest PM3 easy firmware
+
+
  Proxmark commands
 +-----------------+
 hw tune     ->  does not tune antenna's, but does give you some idea if the PM3 is borked
@@ -13,8 +22,8 @@ hw status   -> status page, useful for showing the versions and standalone mode
  
  Kantech
 +-------+
-Example card number   XSF(02)85:14640
-lf io clone --vn 2 --fc 0x85 --cn 14640  <---- note express the FC in hex, but the card number is in decimal
+Example card number   XSF(01)85:14640
+lf io clone --vn 1 --fc 0x85 --cn 14640  <---- note express the FC in hex, but the card number is in decimal
 
 Example card number   XSF(02)6f:2222
 lf io clone --vn 2 --fc 0x6f --cn 2222  <----- again express the FC in hex
