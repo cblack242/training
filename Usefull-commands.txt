@@ -1,52 +1,69 @@
  Proxmark update and start commands
 +----------------------------------+
-  pm3.bat    <-- start the proxmark client
+
+  https://www.proxmarkbuilds.org/latest/rrg_other   <--- download latest PM3 easy firmware
+  
   pm3-flash-bootrom     <-- Used to upgrade the bootrom on older PM3's to a baseline that you can use pm3-flash-all afterwards
   pm3-flash-all         <-- Upgrade bootrom and fw at the same time
-  
-  https://www.proxmarkbuilds.org/latest/rrg_other   <--- download latest PM3 easy firmware
 
+
+ Getting started
++---------------+
+
+Find your pm3 software directory and hold shift with right click to launch a powershell window
+
+.\pm3.bat               <-- start the proxmark client
+
+auto                    <-- auto identify of card (lf search and hf search)
+lf search          		<-- Identify LF card 
+hf search               <-- Identify HF card
 
  Proxmark commands
 +-----------------+
-hw tune     ->  does not tune antenna's, but does give you some idea if the PM3 is borked
-hw connect  -> reconnect if the PM3 disconnects for some reason
-hw ping     -> test connectivity to PM3
-hw status   -> status page, useful for showing the versions and standalone mode
+hw tune                  <--  does not tune antenna's, but does give you some idea if the PM3 is borked
+hw connect               <-- reconnect if the PM3 disconnects for some reason
+hw ping                  <-- test connectivity to PM3
+hw status                <-- status page, useful for showing the versions and standalone mode
+
+
+HID cloning
++-----------+
+lf hid clone -r 2006ec0c86                      <-- write raw value for T55x7 tag (HID 10301 26 bit)
+lf hid clone -w H10301 --fc 123  --cn 1603	    <-- write 26bit format, facility code 123 and card number 1603
+lf hid clone -w C1k35s --fc 123  --cn 1337	    <-- write 35bit HID 1000 corporate format, facility code 123 and card number 1337
+lf hid reader 								    <-- watch for hid cards and dump their content
+
+ EM cloning
++----------+
+lf em 410x --id 12345678       <--  Create EM4100 card with id 12345678
+lf em 410x reader		       <--  Watch for em cards and dump data
+
 
  Paxton
 +------+
-
- lf hitag info   <-- check if a hitag card 
- lf hitag read --ht2 --pwd -k BDF5E846    <-- decode and display the credential data
+ lf hitag info                             <-- check if a hitag card 
+ lf hitag read --ht2 --pwd -k BDF5E846     <-- decode and display the credential data
  
  Kantech
 +-------+
 Example card number   XSF(01)85:14640
-lf io clone --vn 1 --fc 0x85 --cn 14640  <---- note express the FC in hex, but the card number is in decimal
+lf io clone --vn 1 --fc 0x85 --cn 14640  <-- note express the FC in hex, and card number is in decimal
 
 Example card number   XSF(02)6f:2222
-lf io clone --vn 2 --fc 0x6f --cn 2222  <----- again express the FC in hex
+lf io clone --vn 2 --fc 0x6f --cn 2222   <-- again express the FC in hex
 
  Indala card cloning
 +-------------------+
-lf search          		--- Identify LF card 
-lf indala reader		---	read the card details
-lf indala clone –r a0000000a7c28a02			---	Clone the raw data onto a new T5577 card
-lf indala reader		---	read the new card
+lf search          		                    <-- Identify LF card 
+lf indala reader		                    <--	read the card details
+lf indala clone –r a0000000a7c28a02			<--	Clone the raw data onto a new T5577 card
+lf indala reader		                    <--	read the new card
 
- EM cloning
-+----------+
-lf em 410x --id 12345678
-lf em 410x reader		--- watch for em cards and dump data
 
- HID cloning
-+-----------+
-lf hid clone -r 2006ec0c86                           -> write raw value for T55x7 tag (HID 10301 26 bit)
-lf hid clone -w H10301 --fc 123  --cn 1603			-> write 26bit format, facility code 123 and card number 1603
-lf hid clone -w C1k35s --fc 123  --cn 1337			-> write 35bit HID 1000 corporate format, facility code 123 and card number 1337
-lf hid reader 										-> watch for hid cards and dump their content
 
+
+HF cards
+ 
 
  Wiegand commands
 +----------------+
