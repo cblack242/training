@@ -1,0 +1,23 @@
+ Proxmark update and start commands
++----------------------------------+
+
+  1.  Download the proxmark latest build from - https://www.proxmarkbuilds.org/latest/rrg_other  (PM3 easy)
+  2.  Unzip to a new folder on your desktop
+  3.  Enter the folder on your desktop
+  4.  Plug in proxmark3 easy to a USB slot
+  5.  hold left shift and click right mouse button and open a powershell window
+  6.  type .\pm3-flash-all.bat and hit return (if it fails try .\pm3-flash-bootrom.bat first)
+  7.  Proxmark should start to update
+  8.  Once you see the Iceman logo start to appear and you get the "All done" message, it's finished.
+  
+  pm3-flash-bootrom     <-- Used to upgrade the bootrom on older PM3's to a baseline that you can use pm3-flash-all afterwards
+  pm3-flash-all         <-- Upgrade bootrom and fw at the same time
+
+
+
+ Getting started
++---------------+
+
+Find your pm3 software directory and hold shift with right click to launch a powershell window
+
+.\pm3.bat               <-- start the proxmark client
