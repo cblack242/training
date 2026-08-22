@@ -87,6 +87,20 @@ hf iclass encode -w H10301 --fc <FC> --cn <CN> --ki 0
  hf mf cload -f <filename>    copy page data onto gen1a card 
  hf mf csetuid -u 01020304     Set UID of a magic gen1a card
  
+ Mifare ultralight
++-----------------+
+
+ hf mfu ndefread      Read ndef records off an ultralight card
+
+
+ Saflok hotel cards
++------------------+
+
+ hf saflok read       read saflok data  (make note of encrypted data)
+ hf saflok modify --prop_id 1337 -d  <use encrypted data of above>      Creates a new encrypted data string
+ hf saflok provision -d <use new encrypted data, created by hf saflok modify>     Writes the new encrypted data to the card
+ 
+ 
  WARNING WARNING WARNING
 +-----------------------+ 
  hf mf wrbl --blk 0 -k FFFFFFFFFFFF -d 11223344440804006263646566676869 --force      (write a mf gen2 card block 0 - if all you are doing is changing a UID, best use Mifare classic tools on android, this command may brick your card)
